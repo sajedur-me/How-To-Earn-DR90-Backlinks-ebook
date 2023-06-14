@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="icon" href="https://staging.onelittleweb.team/wp-content/uploads/2023/02/one-little-web-fav.svg" sizes="any">
+    <link rel="icon" href="https://staging.onelittleweb.team/wp-content/uploads/2023/02/one-little-web-fav.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="https://staging.onelittleweb.team/wp-content/uploads/2023/02/one-little-web-fav.svg">
+  
+    <style>
+        /* ==========================================================================
+        Base styles: opinionated defaults
+        ========================================================================== */
+
+
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+
+        html, body {
+            scroll-behavior: smooth;
+            color: #222;
+            font-size: 1em;
+            line-height: 1.4em;
+            font-family: 'Lato', sans-serif;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin: 0.67em 0;
+            line-height: 1.4em;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin: 0.57em 0;
+            line-height: 1.4em;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            margin: 0.57em 0;
+            line-height: 1.4em;
+        }
+
+        p {
+            font-size: 20px;
+            margin: 1em 0;
+            line-height: 1.8em;
+            color: #444444;
+        }
+        a {
+            text-decoration: none;
+            color: #555555;
+        }
+        ul li {
+            list-style-type: none;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        .top--book--cover {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 50px;
+            align-items: center;
+        }
+
+        .top--book--cover img {
+            max-width: 700px;
+            width: 100%;
+            height: auto;
+        }
+        .entry--main--body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px 8px;
+        }
+        .book--intro.page--wrapper {
+            background-color: #dcfdff;
+        }
+        .book--intro span.how--to--earn {
+            text-align: right;
+            margin-bottom: 50px;
+        }
+        .book--intro .chapter {
+            margin-bottom: 30px;
+        }
+        .book--intro h2 {
+            margin-bottom: 30px;
+            font-size: 1.5em;
+        }
+        .sub--page li a {
+            display: flex;
+            align-items: start;
+            justify-content: space-between;
+            font-size: 20px;
+            font-weight: 400;
+            color: #555555;
+            cursor: pointer;
+            position: relative;
+            background-color: #dcfdff;
+            margin-bottom: 1em;
+        }
+        .sub--page li a::after {
+            position: absolute;
+            content: '';
+            height: 1px;
+            width: 100%;
+            left: 0;
+            bottom: 0;
+            border-bottom: 1.5px dashed #dddddd;
+        }
+        .sub--page li span {
+            background-color: #dcfdff;
+            padding: 0 10px;
+            z-index: 1;
+        }
+
+        .book--details {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: column;
+            width: 100px;
+            height: 700px !important;
+            text-align: center;
+        }
+        .site--logo img {
+            max-width: 300px;
+            width: 100%;
+        }
+        .page--wrapper {
+            max-width: 600px;
+            width: 100%;
+            height: auto;
+            padding: 50px 50px 25px;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 50px;
+        }
+        .pages--bg {
+            background: hsla(0, 0%, 100%, 1);
+            background: radial-gradient(circle, hsla(0, 0%, 100%, 1) 0%, hsla(183, 100%, 93%, 1) 100%);
+            background: -moz-radial-gradient(circle, hsla(0, 0%, 100%, 1) 0%, hsla(183, 100%, 93%, 1) 100%);
+            background: -webkit-radial-gradient(circle, hsla(0, 0%, 100%, 1) 0%, hsla(183, 100%, 93%, 1) 100%);
+            filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFFFFF", endColorstr="#DCFDFF", GradientType=1 );
+        }
+        .page--top {
+            display: flex;
+            align-items: start;
+            justify-content: space-between;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #DDDDDD;
+            margin-bottom: 40px;
+            font-size: 20px;
+            color: #555555;
+        }
+
+        .page--bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 15px;
+            border-top: 1px solid #DDDDDD;
+            margin-top: 40px;
+            font-size: 20px;
+            color: #555555;
+        }
+        .back--to--top {
+            cursor: pointer;
+        }
+
+
+        @media (max-width: 767px) {
+            .page--wrapper {
+                max-width: 100%;
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+    <main class="entry--main--body">
+
+        <section class="top--book--cover">
+            <img src="https://onelittleweb.com/wp-content/uploads/2023/06/How-to-Earn-DR90-Backlinks.jpg" alt="Book Cover">
+        </section>
+
+        <section class="book--intro page--wrapper page--0">
+            
+            <span class="how--to--earn">How to Earn DR90+ Backlinks</span>       
+
+            <!-- Chepter 1 Title------------------------------->
+            <div class="chapter chapter--1" id="fundamentals">
+                <h2>1. Fundamentals</h2>
+                <ul class="sub--page">
+                    <li><a href="#page1"><span class="sub--title">Minimise usability risks </span><span>1</span></a></li>
+                    <li><a href="#page2"><span class="sub--title">Have a logical reason for every design detail </span><span>2</span></a></li>
+                    <li><a href="#page3"><span class="sub--title">Minimise interaction cost </span><span>3</span></a></li>
+                </ul>
+            </div>
+            <!-- Chepter 2 Title------------------------------->
+            <div class="chapter chapter--2" id="lessIsMore">
+                <h2>2. Less is more</h2>
+                <ul class="sub--page">
+                    <li><a href="#page4"><span class="sub--title">Remove unnecessary information </span><span>4</span></a></li>
+                    <li><a href="#page5"><span class="sub--title">Remove unnecessary styles </span><span>5</span></a></li>
+                    <li><a href="#page6"><span class="sub--title">Not all links need to be underlined </span><span>6</span></a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Site Author Page -->
+        <article class="page--wrapper pages--bg site--author book--details" id="siteAuthor">
+            <div class="title">
+                <h1>How  To Earn DR90+ Backlinks</h1>
+            </div>
+
+            <div class="date">
+                <h3>Edition 1.1</h3>
+                <h3>June 2023</h3>
+            </div>
+
+            <div class="site--author">
+                <h2>Author: <a href="https://onelittleweb.com/author/sujan/">Sujan Sarkar</a></h2>
+                <h2>Producer: <a href="https://onelittleweb.com/">onelittleweb.com</a></h2>
+            </div>
+            
+            <div class="site--logo">
+                <a href="https://onelittleweb.com/"><img src="https://onelittleweb.com/wp-content/uploads/2023/05/logo-01.webp" alt="onelittleweb"></a> 
+            </div>
+            
+        </article>
+
+        <!-- Share Book Page -->
+        <article class="page--wrapper pages--bg share--book book--details" id="shareBook">
+
+            <div class="site--author">
+                <h2>Share the book using</h2>
+                <h2><a href="https://onelittleweb.com/pr-ebook/">onelittleweb.com/pr-ebook</a></h2>
+            </div>
+
+            <div class="copywrite">
+                <h3>Copyright©2023 OneLittleWeb</h3>
+                <h3>All rights reserved</h3>
+            </div>
+
+            <div class="date">
+                <h3>First Published: June 2023</h3>
+            </div>
+
+            
+            <div class="site--logo">
+                <a href="https://onelittleweb.com/"><img src="https://onelittleweb.com/wp-content/uploads/2023/06/How-to-Earn-DR90-Backlinks.webp" alt="QR Code"></a> 
+            </div>
+            
+        </article>
+
+        <!-- Chepter 1 Content--------------------------------->
+        <article class="page--wrapper pages--bg page--1" id="page1">
+            <div class="page--top">
+                <span class="page--title">Minimise usability risks</span>
+                <span class="page--no">1</span>
+            </div>
+
+            <div class="page--content">
+                <h2>Minimise usability risks</h2>
+                <p>
+                    Interface design is hard. Having endless design possibilities sounds great in
+                    theory, but in practice, it can be frustrating and time consuming. With so
+                    many options to choose from regarding layout, spacing, typography, and
+                    colour, making design decisions can be overwhelming. When you add
+                    usability, accessibility, and psychology to the mix, it gets even harder.
+                </p>
+                <p>
+                    Luckily, UI design doesn’t have to be so hard. Over the years, I’ve realised
+                    that most of my UI design decisions are governed by a system of logical
+                    rules. Not artistic flair or magical intuition, just simple rules.
+                </p>
+
+                <h3>Only what you need to know</h3>
+                <p>
+                    There’s an overwhelming amount of design tips, videos, books, and articles
+                    out there. You can burn through a lot of time and money and end up even
+                    more confused. To add to that, a lot of UI design theory is high-level,
+                    impractical, and unnecessary. 
+                </p>
+
+                <p>
+                    I kept this book as concise and practical as possible to help you quickly cut
+                    through the noise. It contains the most important things you need to know
+                    about interface design, usability, and accessibility. A picture is worth a
+                    thousand words, so I designed hundreds of visual examples to demonstrate
+                    concepts faster.
+                </p>
+            </div>
+
+            <div class="page--bottom">
+                <span class="page--chapter">1. Fundamentals</span>
+                <span class="back--to--top"><a href="#fundamentals">Back to top ^</a></span>
+            </div>
+        </article>
+
+        <article class="page--wrapper pages--bg page--2" id="page2">
+            <div class="page--top">
+                <span class="page--title">Have a logical reason for every design detail</span>
+                <span class="page--no">2</span>
+            </div>
+
+            <div class="page--content">
+                <h2>Have a logical reason for every design detail</h2>
+                <p>
+                    Interface design is hard. Having endless design possibilities sounds great in
+                    theory, but in practice, it can be frustrating and time consuming. With so
+                    many options to choose from regarding layout, spacing, typography, and
+                    colour, making design decisions can be overwhelming. When you add
+                    usability, accessibility, and psychology to the mix, it gets even harder.
+                </p>
+                <p>
+                    Luckily, UI design doesn’t have to be so hard. Over the years, I’ve realised
+                    that most of my UI design decisions are governed by a system of logical
+                    rules. Not artistic flair or magical intuition, just simple rules.
+                </p>
+
+                <h3>Only what you need to know</h3>
+                <p>
+                    There’s an overwhelming amount of design tips, videos, books, and articles
+                    out there. You can burn through a lot of time and money and end up even
+                    more confused. To add to that, a lot of UI design theory is high-level,
+                    impractical, and unnecessary. 
+                </p>
+
+                <p>
+                    I kept this book as concise and practical as possible to help you quickly cut
+                    through the noise. It contains the most important things you need to know
+                    about interface design, usability, and accessibility. A picture is worth a
+                    thousand words, so I designed hundreds of visual examples to demonstrate
+                    concepts faster.
+                </p>
+            </div>
+
+            <div class="page--bottom">
+                <span class="page--chapter">1. Fundamentals</span>
+                <span class="back--to--top"><a href="#fundamentals">Back to top ^</a></span>
+            </div>
+        </article>
+
+        <article class="page--wrapper pages--bg page--3" id="page3">
+            <div class="page--top">
+                <span class="page--title">Minimise interaction cost</span>
+                <span class="page--no">3</span>
+            </div>
+
+            <div class="page--content">
+                <h2>Minimise interaction cost</h2>
+                <p>
+                    Interface design is hard. Having endless design possibilities sounds great in
+                    theory, but in practice, it can be frustrating and time consuming. With so
+                    many options to choose from regarding layout, spacing, typography, and
+                    colour, making design decisions can be overwhelming. When you add
+                    usability, accessibility, and psychology to the mix, it gets even harder.
+                </p>
+                <p>
+                    Luckily, UI design doesn’t have to be so hard. Over the years, I’ve realised
+                    that most of my UI design decisions are governed by a system of logical
+                    rules. Not artistic flair or magical intuition, just simple rules.
+                </p>
+
+                <h3>Only what you need to know</h3>
+                <p>
+                    There’s an overwhelming amount of design tips, videos, books, and articles
+                    out there. You can burn through a lot of time and money and end up even
+                    more confused. To add to that, a lot of UI design theory is high-level,
+                    impractical, and unnecessary. 
+                </p>
+
+                <p>
+                    I kept this book as concise and practical as possible to help you quickly cut
+                    through the noise. It contains the most important things you need to know
+                    about interface design, usability, and accessibility. A picture is worth a
+                    thousand words, so I designed hundreds of visual examples to demonstrate
+                    concepts faster.
+                </p>
+            </div>
+
+            <div class="page--bottom">
+                <span class="page--chapter">1. Fundamentals</span>
+                <span class="back--to--top"><a href="#fundamentals">Back to top ^</a></span>
+            </div>
+        </article>
+
+        <!-- Chepter 2 Content--------------------------------->
+        <article class="page--wrapper pages--bg page--4" id="page4">
+            <div class="page--top">
+                <span class="page--title">Remove unnecessary information</span>
+                <span class="page--no">4</span>
+            </div>
+
+            <div class="page--content">
+                <h2>Remove unnecessary information</h2>
+                <p>
+                    Interface design is hard. Having endless design possibilities sounds great in
+                    theory, but in practice, it can be frustrating and time consuming. With so
+                    many options to choose from regarding layout, spacing, typography, and
+                    colour, making design decisions can be overwhelming. When you add
+                    usability, accessibility, and psychology to the mix, it gets even harder.
+                </p>
+                <p>
+                    Luckily, UI design doesn’t have to be so hard. Over the years, I’ve realised
+                    that most of my UI design decisions are governed by a system of logical
+                    rules. Not artistic flair or magical intuition, just simple rules.
+                </p>
+
+                <h3>Only what you need to know</h3>
+                <p>
+                    There’s an overwhelming amount of design tips, videos, books, and articles
+                    out there. You can burn through a lot of time and money and end up even
+                    more confused. To add to that, a lot of UI design theory is high-level,
+                    impractical, and unnecessary. 
+                </p>
+
+                <p>
+                    I kept this book as concise and practical as possible to help you quickly cut
+                    through the noise. It contains the most important things you need to know
+                    about interface design, usability, and accessibility. A picture is worth a
+                    thousand words, so I designed hundreds of visual examples to demonstrate
+                    concepts faster.
+                </p>
+            </div>
+
+            <div class="page--bottom">
+                <span class="page--chapter">2. Less is more</span>
+                <span class="back--to--top"><a href="#lessIsMore">Back to top ^</a></span>
+            </div>
+        </article>
+
+        <article class="page--wrapper pages--bg page--5" id="page5">
+            <div class="page--top">
+                <span class="page--title">Remove unnecessary styles</span>
+                <span class="page--no">5</span>
+            </div>
+
+            <div class="page--content">
+                <h2>Remove unnecessary styles</h2>
+                <p>
+                    Interface design is hard. Having endless design possibilities sounds great in
+                    theory, but in practice, it can be frustrating and time consuming. With so
+                    many options to choose from regarding layout, spacing, typography, and
+                    colour, making design decisions can be overwhelming. When you add
+                    usability, accessibility, and psychology to the mix, it gets even harder.
+                </p>
+                <p>
+                    Luckily, UI design doesn’t have to be so hard. Over the years, I’ve realised
+                    that most of my UI design decisions are governed by a system of logical
+                    rules. Not artistic flair or magical intuition, just simple rules.
+                </p>
+
+                <h3>Only what you need to know</h3>
+                <p>
+                    There’s an overwhelming amount of design tips, videos, books, and articles
+                    out there. You can burn through a lot of time and money and end up even
+                    more confused. To add to that, a lot of UI design theory is high-level,
+                    impractical, and unnecessary. 
+                </p>
+
+                <p>
+                    I kept this book as concise and practical as possible to help you quickly cut
+                    through the noise. It contains the most important things you need to know
+                    about interface design, usability, and accessibility. A picture is worth a
+                    thousand words, so I designed hundreds of visual examples to demonstrate
+                    concepts faster.
+                </p>
+            </div>
+
+            <div class="page--bottom">
+                <span class="page--chapter">2. Less is more</span>
+                <span class="back--to--top"><a href="#lessIsMore">Back to top ^</a></span>
+            </div>
+        </article>
+
+        <article class="page--wrapper pages--bg page--6" id="page6">
+            <div class="page--top">
+                <span class="page--title">Not all links need to be underlined</span>
+                <span class="page--no">6</span>
+            </div>
+
+            <div class="page--content">
+                <h2>Not all links need to be underlined</h2>
+                <p>
+                    Interface design is hard. Having endless design possibilities sounds great in
+                    theory, but in practice, it can be frustrating and time consuming. With so
+                    many options to choose from regarding layout, spacing, typography, and
+                    colour, making design decisions can be overwhelming. When you add
+                    usability, accessibility, and psychology to the mix, it gets even harder.
+                </p>
+                <p>
+                    Luckily, UI design doesn’t have to be so hard. Over the years, I’ve realised
+                    that most of my UI design decisions are governed by a system of logical
+                    rules. Not artistic flair or magical intuition, just simple rules.
+                </p>
+
+                <h3>Only what you need to know</h3>
+                <p>
+                    There’s an overwhelming amount of design tips, videos, books, and articles
+                    out there. You can burn through a lot of time and money and end up even
+                    more confused. To add to that, a lot of UI design theory is high-level,
+                    impractical, and unnecessary. 
+                </p>
+
+                <p>
+                    I kept this book as concise and practical as possible to help you quickly cut
+                    through the noise. It contains the most important things you need to know
+                    about interface design, usability, and accessibility. A picture is worth a
+                    thousand words, so I designed hundreds of visual examples to demonstrate
+                    concepts faster.
+                </p>
+            </div>
+
+            <div class="page--bottom">
+                <span class="page--chapter">2. Less is more</span>
+                <span class="back--to--top"><a href="#lessIsMore">Back to top ^</a></span>
+            </div>
+        </article>
+
+        <section class="bottom--book--cover">
+
+        </section>
+    </main>
+</body>
+</html>
+
