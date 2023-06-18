@@ -95,6 +95,7 @@
             border-radius: 6px;
             color: #FFFFFF;      
             font-size: 22px;
+            display: inline-block;
         }
         .button-link {
             margin: 50px 0;
@@ -260,6 +261,13 @@
             }
             .d-flex {
                 flex-direction: column;
+            }
+        }
+
+        @media (max-width: 412px) {
+            img {
+                width: 100%;
+                height: auto;
             }
         }
 
@@ -921,7 +929,7 @@
                 </div>
 
                 <div class="case--study text-center button-link">
-                    <p class="text-center">
+                    <p>
                         <img class="img100" src="https://staging.onelittleweb.team/wp-content/uploads/2023/06/Onelittleweb-Pharmaeceutical-intelligence-Case-Study-01-2.png" alt="Case Study Image">
                     </p>
                     <a href="#" class="btn btn-gradient">Read more on this case study</a>
